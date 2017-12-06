@@ -1,0 +1,24 @@
+{
+  "name": "impactanalyzer",
+  "version": "1.0.0",
+  "description": "Impact Analyzer App using MEAN Framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "async": "*",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors":"*",
+    "express": "*",   
+    "jsonwebtoken": "*",
+    "mongoose": "4.7.2",
+    "mssql":"*",
+    "passport":"*",
+    "passport-jwt":"*"
+  },
+
+  "author": "Eric Leron",
+  "license": "ISC"
+}
