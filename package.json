@@ -1,7 +1,7 @@
 {
-  "name": "impactanalyzer",
+  "name": "authapp",
   "version": "1.0.0",
-  "description": "Impact Analyzer App using MEAN Framework",
+  "description": "Auth App using MEAN Framework",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,15 +10,17 @@
     "async": "*",
     "bcryptjs": "*",
     "body-parser": "*",
-    "cors":"*",
-    "express": "*",   
+    "cors": "*",
+    "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "4.7.2",
-    "mssql":"*",
-    "passport":"*",
-    "passport-jwt":"*"
+    "mssql": "*",
+    "passport": "*",
+    "passport-jwt": "*"
   },
-
   "author": "Eric Leron",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.7.0"
+  }
 }
