@@ -15,13 +15,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages'; 
 import { AuthService } from './services/auth.service';
+import { AuthgardService } from './services/authguard.service';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'profile', component: ProfileComponent}
+  {path:'dashboard', component: DashboardComponent, canActivate:[AuthgardService]},
+  {path:'profile', component: ProfileComponent, canActivate:[AuthgardService]}
 ];
 
 @NgModule({
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ValidateService, FlashMessagesService, AuthService],
+  providers: [ValidateService, FlashMessagesService, AuthService, AuthgardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

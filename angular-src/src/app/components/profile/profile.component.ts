@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  user : Object;
+
+  constructor(
+    private authService : AuthService,
+    private router : Router,
+    private flashMessageService : FlashMessagesService
+  ) { }
 
   ngOnInit() {
+    this.authService.getProfile()
+      .subscribe(profile => {
+        this.user = profile.user;
+      });
+
   }
 
 }

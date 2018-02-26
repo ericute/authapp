@@ -39,6 +39,11 @@ app.get('/', (req, res) => {
 // Users Route
 app.use('/users', users);
 
+// All routes will be sent to angular
+app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'angular-src/public/index.html'));
+});
+
 app.listen(port, () => {
     console.log('Server started on port ' + port);
 });
